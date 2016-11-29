@@ -152,6 +152,6 @@ e17.grid(row=19, column=1)
 
 Button(master, text='Quit', command=master.quit).grid(row=20, column=0, sticky=W, pady=4)
 Button(master, text='Calculate', command=calc).grid(row=20, column=1, sticky=W, pady=4)
-Button(master, text='Wipe', command=calc).grid(row=20, column=2, sticky=W, pady=4)
+Button(master, text='Wipe', command=wipe).grid(row=20, column=2, sticky=W, pady=4)
 
 mainloop( )
