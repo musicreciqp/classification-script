@@ -75,6 +75,7 @@ def calc():
 
 #main
 master = Tk()
+master.wm_title("Music Rec IQP Classification")
 Label(master, text="Artist").grid(row=0)
 Label(master, text="Song Name").grid(row=1)
 Label(master, text="Dense").grid(row=3)
