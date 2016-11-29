@@ -34,14 +34,14 @@ def validateName(text):
 def validateScore(text, pre, insert):
     if (int(insert) == 0):
             return True
-    if (text in '12345'):
+    if (text in '123-'):
         if(text == '-'):
             if (pre == ''):
                 return True
             else:
                 return False
         num = int(pre + text)
-        if((num >= 1) and (num <= 5)):
+        if((num >= -3) and (num <= 3)):
             return True
     return False
 
