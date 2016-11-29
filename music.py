@@ -3,6 +3,25 @@ import csv
 
 # based on code from http://stackoverflow.com/questions/8959815/restricting-the-value-in-tkinter-entry-widget
 
+# wipe the floor
+def wipe():
+    e1.delete(0,END)
+    e2.delete(0,END)
+    e3.delete(0,END)
+    e4.delete(0,END)
+    e5.delete(0,END)
+    e6.delete(0,END)
+    e7.delete(0,END)
+    e8.delete(0,END)
+    e9.delete(0,END)
+    e10.delete(0,END)
+    e11.delete(0,END)
+    e12.delete(0,END)
+    e13.delete(0,END)
+    e14.delete(0,END)
+    e15.delete(0,END)
+    e16.delete(0,END)
+
 def validateName(text):
         if (isinstance(text, basestring)):
             try:
@@ -15,7 +34,7 @@ def validateName(text):
 def validateScore(text, pre, insert):
     if (int(insert) == 0):
             return True
-    if (text in '-012'):
+    if (text in '12345'):
         if(text == '-'):
             if (pre == ''):
                 return True
@@ -62,23 +81,6 @@ def calc():
                 print("Appended to %s\n" % filename)
 
     # reset fields
-    e1.delete(0,END)
-    e2.delete(0,END)
-
-    e3.delete(0,END)
-    e4.delete(0,END)
-    e5.delete(0,END)
-    e6.delete(0,END)
-    e7.delete(0,END)
-    e8.delete(0,END)
-    e9.delete(0,END)
-    e10.delete(0,END)
-    e11.delete(0,END)
-    e12.delete(0,END)
-    e13.delete(0,END)
-    e14.delete(0,END)
-    e15.delete(0,END)
-    e16.delete(0,END)
 
 #main
 master = Tk()
@@ -150,5 +152,6 @@ e17.grid(row=19, column=1)
 
 Button(master, text='Quit', command=master.quit).grid(row=20, column=0, sticky=W, pady=4)
 Button(master, text='Calculate', command=calc).grid(row=20, column=1, sticky=W, pady=4)
+Button(master, text='Wipe', command=calc).grid(row=20, column=2, sticky=W, pady=4)
 
 mainloop( )
