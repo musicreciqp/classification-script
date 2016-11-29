@@ -41,7 +41,7 @@ def validateScore(text, pre, insert):
             else:
                 return False
         num = int(pre + text)
-        if((num >= -2) and (num <= 2)):
+        if((num >= 1) and (num <= 5)):
             return True
     return False
 
