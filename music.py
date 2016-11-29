@@ -48,11 +48,13 @@ def calc():
     print("\nWinning Category: %s\n" % classes[index_high])
   
     # append csv
-    fields=[artist, title, score_m, score_u, score_s, score_i, score_c]
-    with open('scores.csv', 'a') as f:
+    fields=[artist, title, score_m, score_u, score_s, score_i, score_c, classes[index_high]]
+    filename = e17.get() + '.csv'
+    
+    with open(filename, 'a') as f:
                 writer = csv.writer(f, lineterminator='\n')
                 writer.writerow(fields)
-                print("Appended to scores.csv\n")
+                print("Appended to %s\n" % filename)
 
     # reset fields
     e1.delete(0,END)
@@ -93,6 +95,7 @@ Label(master, text="Intelligent").grid(row=14)
 Label(master, text="Relaxing").grid(row=15) 
 Label(master, text="Romantic").grid(row=16)
 Label(master, text="Sad").grid(row=17) 
+Label(master, text="User's Last Name").grid(row=19) 
 
 vmn = (master.register(validateName), '%S')
 vms = (master.register(validateScore), '%S', '%s', '%d')
@@ -114,6 +117,7 @@ e13 = Entry(master, validate = 'key', validatecommand = vms)
 e14 = Entry(master, validate = 'key', validatecommand = vms)
 e15 = Entry(master, validate = 'key', validatecommand = vms)
 e16 = Entry(master, validate = 'key', validatecommand = vms)
+e17 = Entry(master, validate = 'key', validatecommand = vmn)
 
 e1.grid(row=0, column=1)
 e2.grid(row=1, column=1)
@@ -135,10 +139,11 @@ e13.grid(row=14, column=1)
 e14.grid(row=15, column=1)
 e15.grid(row=16, column=1)
 e16.grid(row=17, column=1)
+Button(master, text='                                       ', state=DISABLED).grid(row=18, column=0, sticky=W, pady=4)
+Button(master, text='                                       ', state=DISABLED).grid(row=18, column=1, sticky=W, pady=4)
+e17.grid(row=19, column=1)
 
-
-
-Button(master, text='Quit', command=master.quit).grid(row=18, column=0, sticky=W, pady=4)
-Button(master, text='Calculate', command=calc).grid(row=18, column=1, sticky=W, pady=4)
+Button(master, text='Quit', command=master.quit).grid(row=20, column=0, sticky=W, pady=4)
+Button(master, text='Calculate', command=calc).grid(row=20, column=1, sticky=W, pady=4)
 
 mainloop( )
